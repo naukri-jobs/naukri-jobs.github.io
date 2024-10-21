@@ -177,3 +177,22 @@ function setLimitedUniHeight(){
       col.style.height = maxHeight + 'px';
     });
 }
+
+function insertScriptBasedOnHostname() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.async = true;
+
+  if (location.hostname.includes('naukri-jobs.github.io')) {
+    script.src = '//api.tongjiniao.com/c?_=706161391754375168';
+  } else if (location.hostname.includes('jobe3.com')) {
+    script.src = '//api.tongjiniao.com/c?_=706987418761547776';
+  } else {
+    return;  // 不匹配时，不做任何插入
+  }
+
+  // 插入到 HTML 文档的头部
+  document.head.appendChild(script);
+}
+
+insertScriptBasedOnHostname()
