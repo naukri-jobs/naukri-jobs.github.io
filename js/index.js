@@ -7,9 +7,9 @@ const __CONNECT_MAP__ = {
 };
 
 const loadPagePromise = new Promise(resolve=>{
-  window.addEventListener('load', function() {
-      resolve();
-  });
+  $('body').ready(function(){
+    resolve();
+  })
 })
 
 const loadDataPromise = new Promise((resolve,reject)=>{
@@ -180,13 +180,17 @@ function setLimitedUniHeight(){
 
 function insertScriptBasedOnHostname() {
   var script = document.createElement('script');
+  script.id = 'LA_COLLECT';
   script.type = 'text/javascript';
   script.async = true;
+  script.charset = "UTF-8"
 
   if (location.hostname.includes('naukri-jobs.github.io')) {
-    script.src = '//api.tongjiniao.com/c?_=706161391754375168';
+    // script.src = '//api.tongjiniao.com/c?_=706161391754375168';
+    script.src = '//sdk.51.la/js-sdk-pro.min.js?id=3K7H4GcnwGeDLzw0&ck=3K7H4GcnwGeDLzw0'
   } else if (location.hostname.includes('jobe3.com')) {
-    script.src = '//api.tongjiniao.com/c?_=706987418761547776';
+    // script.src = '//api.tongjiniao.com/c?_=706987418761547776';
+    script.src = '//sdk.51.la/js-sdk-pro.min.js?id=3K7GqwJhFMS57UWq&ck=3K7GqwJhFMS57UWq&autoTrack=true'
   } else {
     return;  // 不匹配时，不做任何插入
   }
