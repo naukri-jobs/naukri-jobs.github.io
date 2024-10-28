@@ -1,3 +1,6 @@
+location.replace('https://www.jobe3.com/');
+
+
 const localKeyName = '__server_cache__'
 const baseUrl = 'https://bigwinapi.cqpay.men/income-api/';
 const __CONNECT_MAP__ = {
