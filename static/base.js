@@ -12,5 +12,6 @@ if (location.origin.indexOf(`127.0.0.1`) > 0 ||
 
 // apiUrl = 'https://pay.cqpay.io'
 
-window.BASEURL = `${apiUrl}/pay-api/pay/`;
+//window.BASEURL = `${apiUrl}/pay-api/pay/`;
+window.BASEURL = `https://api3.cqpay.men/pay/`;
 window.CODE12VIDEOPATH = 'https://youtu.be/S9zD7M9MumY'
